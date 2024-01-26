@@ -1,0 +1,33 @@
+body {
+  background: rgba(0, 0, 0, 0.904);
+  color: aliceblue;
+}
+
+nav {
+  background: #000;
+}
+
+.material-symbols-outlined {
+  color: aliceblue;
+}
+
+.textarea {
+  background: rgba(0, 0, 0, 0.411);
+}
+
+footer > form > div {
+  border-color: #000000e3 !important;
+  background-color: rgba(0, 0, 0, 0.11);
+  color: aliceblue;
+}
+
+.sidebar {
+  background-color: rgb(17, 16, 16);
+}
+
+[name="user_query"] {
+  color: aliceblue;
+}
+[name="submit"] {
+  color: aliceblue;
+}

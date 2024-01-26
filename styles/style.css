@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+nav {
+  display: grid;
+  height: 8%;
+  width: 100%;
+  padding: 1%;
+  border-radius: 7px;
+
+  grid-template-columns: 5% auto;
+}
+
+.material-symbols-outlined {
+  border: 0px;
+}
+
+#menu_button {
+  height: 25px;
+  width: 35px;
+  font-size: 25px;
+  background-color: inherit;
+  border-width: 0px;
+
+  grid-row: 1/1;
+  padding-left: 30%;
+}
+
+#chatbottexttop {
+  height: fit-content;
+
+  position: relative;
+  top: -6%;
+
+  font-family: "Barlow", sans-serif;
+  font-size: 25px;
+  grid-column: 2/2;
+}
+
+.textarea {
+  margin: 20px;
+  width: 90vw;
+  height: 75vh;
+  border-radius: 9px;
+  display: grid;
+  justify-content: end;
+  row-gap: 10vh;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  overflow-y: scroll;
+}
+
+.textarea::-webkit-scrollbar {
+  display: none;
+}
+
+footer > form > div {
+  background-color: inherit;
+  display: grid;
+  grid-template-columns: 94% auto;
+  border: 2px solid;
+  height: 30px;
+  width: 85vw;
+  border-radius: 30px;
+}
+
+[name="user_query"] {
+  background-color: transparent;
+  justify-self: center;
+  height: 90%;
+  width: 94%;
+  border: 0px;
+  font-size: 70%;
+  border-radius: 30px;
+  outline: none;
+}
+[name="submit"] {
+  background-color: transparent !important;
+  grid-column: 2/2;
+  justify-self: center;
+  background-color: inherit;
+  width: fit-content;
+  height: 90%;
+}
+
+.sidebar {
+  justify-self: flex-start;
+  height: 100%;
+  width: 3%;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 40vw;
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  overflow-x: hidden;
+  position: fixed;
+  left: -40vw;
+  z-index: 1;
+  font-size: 200%;
+  transition: all 0.7s ease-in-out;
+}
+.sidebar > ol {
+  margin-left: auto;
+  list-style: none;
+  font-size: smaller;
+}
+
+.open_sidebar {
+  left: 0vw !important;
+}
+
+#exit_sidebar {
+  height: fit-content;
+  margin-left: auto;
+  font-size: xx-large;
+}
