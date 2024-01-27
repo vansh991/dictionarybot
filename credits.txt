@@ -1,0 +1,2 @@
+This bot is created by vansh - https://github.com/vansh991
+meanings of words is taken from the api - https://dictionaryapi.dev/

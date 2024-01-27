@@ -63,7 +63,7 @@ async function fetchingdata(query) {
       return parsingData(data);
     })
     .catch((error) => {
-      console.error("Error:", error);
+      return "Some error occoured:<br />  You can check your internet connection<br />  or you can try another query";
     });
 }
 
@@ -94,48 +94,41 @@ function show_input(event) {
   event.preventDefault();
   input = document.createElement("div");
 
-  input.style.height = "fit-content";
   input.style.width = "30vw";
-  input.style.margin = "30px";
+  input.style.margin = "10px 10px 10px Auto";
 
   input.style.background = "inherit";
   input.style.borderRadius = "10px";
   input.style.textWrap = "wrap";
-  input.style.display = "flex";
-  input.style.justifySelf = "end";
-  input.style.justifyContent = "end";
-  input.style.gridColumn = "2 / span 2";
-  input.style.gridRow = `${rows_taken} / span ${rows_taken}`;
 
   user_query = document.querySelector("[name=user_query]").value;
   input.innerHTML = user_query;
   document.querySelector(".textarea").appendChild(input);
   get_output(user_query);
-  rows_taken += 1;
 }
 
 async function get_output(input) {
   raw_output = await fetchingdata(input);
-  output = beautifyingData(raw_output);
+  if (
+    raw_output !=
+    "Some error occoured:<br />  You can check your internet connection<br />  or you can try another query"
+  ) {
+    output = beautifyingData(raw_output);
+  } else {
+    output = raw_output;
+  }
   output_div = document.createElement("div");
-  output_div.style.height = "fit-content";
 
   output_div.style.width = "30vw";
   output_div.style.margin = "30px";
 
   output_div.style.background = "inherit";
   output_div.style.borderRadius = "10px";
-  output_div.style.textWrap = "wrap";
-  output_div.style.display = "flex";
   output_div.innerHTML = `${output}`;
-  output_div.style.gridColumn = "1 / span 1";
-  output_div.style.gridRow = `${rows_taken} / span ${rows_taken}`;
 
   document.querySelector(".textarea").appendChild(output_div);
-  rows_taken += 1;
 }
 
-let rows_taken = 1;
 function main() {
   document
     .querySelector("#menu_button")
